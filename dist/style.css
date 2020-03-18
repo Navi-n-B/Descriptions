@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Circular";
+  src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.eot");
+  src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.eot?#iefix") format("embedded-opentype"), url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.woff") format("woff"), url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+};
+
+/*ex of container of desc*/
+main {
+  max-width: 1280px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/*
+todo: adjust below to fit new markup
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.pro title {
+  color: #222222;
+}
+.pro span {
+  color: #717171;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 20px;
+  color: #222222;
+}
+.body title {
+  font-weight: 600;
+}
+.body p {
+  font-weight: 400;
+}
+
+.amenity {
+  float: left;
+  width: 45%;
+}
+.amenity:nth-child(even) {
+  float: right;
+}
+.amenity title {
+  color: #222222;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.amenity title.missing {
+  text-decoration: line-through;
+}
+button {
+  background-color: #FF385C;
+  color: #222222;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 30px;
+}
+*/

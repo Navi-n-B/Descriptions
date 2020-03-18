@@ -1,0 +1,5 @@
+node_modules
+.env
+
+#commit the package lock? y/n?
+package-lock.json
