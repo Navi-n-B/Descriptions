@@ -1,9 +1,11 @@
 import React from 'react';
+import { getIonicon, convertToClass } from './_helper.jsx';
 
 const Amenity = ({icon, title, missing}) => {
-  return (<div className={'amenity '+ icon}>
-          {JSON.stringify(icon)}
-          <span className={missing ? ('row') : 'row strike-through'}>{title}</span>
-       </div>)}
+  const theIcon = getIonicon(icon);
+  return (<div className={'amenity amenity-'+convertToClass(title)}>
+            {typeof theIcon !== 'undefined' && React.createElement(theIcon,{size: '18px'})}
+            <span className={missing ? 'row strike-through': 'row'}>{title}</span>
+          </div>)}
 
 export default Amenity;

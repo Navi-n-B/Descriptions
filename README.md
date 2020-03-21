@@ -1,3 +1,9 @@
 # nullbnb-description-proxy-server
 
-** Make sure to create a .env at the root of this project to save your own database_url and port!
+** Read this to get the project setup
+
+1. Create a .env in the root of this project, and your own database.json for config. examples have been provided.
+2. You will have to make your own databases, since i dont have the maria-db CLI working fully yet. try logging into console and running CREATE DATABASE development;
+3. npm install, then run 'npm run client' and 'npm run server' in your terminal. bam.
+
+Let me know if something doesn't work.

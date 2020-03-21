@@ -37,7 +37,7 @@ const descriptionInfo = {
   amenities: {
   titles: ['Wifi', 'Free Parking on premises', 'Dryer', 'Breakfast', 'Washer', 'Hangers', 'Essentials', 'Fire extinguisher',],
   missing: ['Carbon monoxide alarm','Smoke alarm'],
-  icons: ['','','','','','','','','','','','','','','','','',],
+  icons: ['IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline','IoIosStarOutline',],
   },
 }
 
