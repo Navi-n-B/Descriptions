@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     //todo: replace w foreign key
     host_id: DataTypes.INTEGER,
     amenities_list: DataTypes.STRING,
-    description: DataTypes.TEXT,
+    description_titles: DataTypes.STRING,
+    description_bodies: DataTypes.TEXT,
     location: DataTypes.STRING,
     guest_size: DataTypes.INTEGER,
     bath_count: DataTypes.FLOAT,

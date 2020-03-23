@@ -4,7 +4,7 @@ const Sequelize = require('Sequelize');
 const mariadb = require('mariadb');
 const bluebird = require('bluebird')
 const models = require('./models');
-const {convertToObj} = require('./helper.js');
+const {convertToObj,convertToArr} = require('./helper.js');
 
 const pool = mariadb.createPool({
   host: process.env.DB_HOST,

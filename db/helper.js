@@ -1,3 +1,5 @@
+var randomWords = require('random-words');
+
 const containsAllInts = function(arr){
   for(let i=0;i>arr.length;i++){
     if(parseInt(arr[i]) === 'NaN'){
@@ -38,17 +40,28 @@ const generateArray = function(length, limit=10000){
 export const generateNumber = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 }
+const generateDescription = (paragraphs=3) => {
+  let description = {titles: [], bodies: []};
+
+  for(let i=0; i<paragraphs;i++){
+    description.titles.push(randomWords({exactly:3, wordsPerString:2}).join(' '));
+    description.bodies.push(randomWords({exactly:100}).join(' '));
+  };
+  return description;
+}
 
 export const getFakeListings = function(count=100,maxGuestSize=4) {
   let fakeListings = [];
   for(let i =0; i<count;i++){
     const listingSize = generateNumber(maxGuestSize);
+    const description = generateDescription();
     fakeListings.push({
-      title: 'TBGenerated home',
+      title: randomWords({exactly:5, wordsPerString:2}).join(' '),
       host_id: Math.floor(Math.random()*3),
       amenities_list: generateArray(40),
       accessibilities_list: generateArray(8),
-      description: 'TBGenerated description',
+      description_titles: description.titles.join('|||'),
+      description_bodies: description.bodies.join('|||'),
       location: 'Fake Location',
       guest_size: listingSize,
       bath_count: 2.5,
@@ -84,54 +97,53 @@ const airbnbDescriptors = {
     'daybed'
   ],
   ['pros']: [
-    {title: 'Great Host!', description: 'This host is a great host.', icon: ''},
-    {title: 'Super Clean!', description: '120% of guests said this home was super clean.', icon: ''},
-    {title: 'Close to the beach!', description: 'This place is mondo close to the beach.', icon: ''},
-    {title: 'The whole shebang!', description: 'You get this all to yo\'self.', icon: ''},
+    {title: 'Great Host!', description: 'This host is a great host.', icon: 'IoIosMedal'},
+    {title: 'Super Clean!', description: '120% of guests said this home was magical.', icon: 'IoIosColorWand'},
+    {title: 'Close to the beach!', description: 'This place is mondo close to the beach.', icon: 'IoIosIceCream'},
+    {title: 'The whole shebang!', description: 'You get this all to yo\'self.', icon: 'IoIosArchive'},
   ],
   ['amenities']: [
-    {title: "Air conditioning", icon: ''},
-    {title: "Alarm Clock", icon: ''},
-    {title: "Balcony", icon: ''},
-    {title: "Bathroom", icon: ''},
-    {title: "Bathtub", icon: ''},
-    {title: "Bed Linen", icon: ''},
-    {title: "Boating", icon: ''},
-    {title: "Cable TV", icon: ''},
-    {title: "Carbon monoxide detectors", icon: ''},
-    {title: "Chairs", icon: ''},
-    {title: "Children Area", icon: ''},
-    {title: "Coffee Maker in Room", icon: ''},
-    {title: "Cooking hob", icon: ''},
-    {title: "Cookware & Kitchen Utensils", icon: ''},
-    {title: "Dishwasher", icon: ''},
-    {title: "Double bed", icon: ''},
-    {title: "En suite bathroom", icon: ''},
-    {title: "Free Parking", icon: ''},
-    {title: "Free Wireless Internet", icon: ''},
-    {title: "Freezer", icon: ''},
-    {title: "Fridge / Freezer", icon: ''},
-    {title: "Golf", icon: ''},
-    {title: "Hair Dryer", icon: ''},
-    {title: "Heating", icon: ''},
-    {title: "Hot tub", icon: ''},
-    {title: "Indoor Pool", icon: ''},
-    {title: "Ironing Board", icon: ''},
-    {title: "Microwave", icon: ''},
-    {title: "Outdoor Pool", icon: ''},
-    {title: "Outdoor Tennis", icon: ''},
-    {title: "Oven", icon: ''},
-    {title: "Queen size bed", icon: ''},
-    {title: "Restaurant", icon: ''},
-    {title: "Shopping Mall", icon: ''},
-    {title: "Shower", icon: ''},
-    {title: "Smoke detectors", icon: ''},
-    {title: "Sofa", icon: ''},
-    {title: "Stereo", icon: ''},
-    {title: "Swimming pool", icon: ''},
-    {title: "Toilet", icon: ''},
-    {title: "Towels", icon: ''},
-    {title: "TV", icon: ''},
+    {title: "Air conditioning", icon: 'IoIosCloudDownload'},
+    {title: "Alarm Clock", icon: 'IoIosAlarm'},
+    {title: "Balcony", icon: 'IoIosBody'},
+    {title: "Bathroom", icon: 'IoMdRocket'},
+    {title: "Bathtub", icon: 'IoMdSquareOutline'},
+    {title: "Bed Linen", icon: 'IoMdSquare'},
+    {title: "Boating", icon: 'IoIosBoat'},
+    {title: "Cable TV", icon: 'IoIosTv'},
+    {title: "Carbon monoxide detectors", icon: 'IoMdAlert'},
+    {title: "Chairs", icon: 'IoIosDownload'},
+    {title: "Children Area", icon: 'IoIosHeartEmpty'},
+    {title: "Coffee Maker in Room", icon: 'IoIosOutlet'},
+    {title: "Cooking hob", icon: 'IoMdNutrition'},
+    {title: "Cookware & Kitchen Utensils", icon: 'IoMdBarcode'},
+    {title: "Dishwasher", icon: 'IoMdLocate'},
+    {title: "Double bed", icon: 'IoIosBed'},
+    {title: "En suite bathroom", icon: 'IoIosAddCircle'},
+    {title: "Free Parking", icon: 'IoIosCar'},
+    {title: "Free Wireless Internet", icon: 'IoIosWifi'},
+    {title: "Freezer", icon: 'IoMdSnow'},
+    {title: "Fridge", icon: 'IoMdPizza'},
+    {title: "Golf", icon: 'IoMdRedo'},
+    {title: "Hair Dryer", icon: 'IoMdPerson'},
+    {title: "Heating", icon: 'IoMdRefreshCircle'},
+    {title: "Hot tub", icon: 'IoIosWater'},
+    {title: "Indoor Pool", icon: 'IoIosWine'},
+    {title: "Ironing Board", icon: 'IoMdShirt'},
+    {title: "Microwave", icon: 'IoMdPizzas'},
+    {title: "Outdoor Pool", icon: 'IoIosWater'},
+    {title: "Outdoor Tennis", icon: 'IoLogoGameControllerA'},
+    {title: "Oven", icon: 'IoMdOptions'},
+    {title: "Queen size bed", icon: 'IoIosBed'},
+    {title: "Restaurant", icon: 'IoMdTrain'},
+    {title: "Shopping Mall", icon: 'IoMdNavigate'},
+    {title: "Shower", icon: 'IoMdUmbrella'},
+    {title: "Smoke detectors", icon: 'IoLogoFlickr'},
+    {title: "Sofa", icon: 'IoMdWalk'},
+    {title: "Stereo", icon: 'IoMdRadio'},
+    {title: "Really Great Toilet", icon: 'IoMdStarOutline'},
+    {title: "Towels", icon: 'IoIosThumbsUp'},
+    {title: "TV", icon: 'IoMdTv'},
   ]
 }
 
