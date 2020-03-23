@@ -26,12 +26,12 @@ app.get('/getListings', (req, res) => {
   });
 });
 app.get('/listing/:id', (req, res) => {
-  getListingsById(req.params.id,(err,results)=>{
+  getListingById(req.params.id,(err,results)=>{
     if(err){
       res.send({ message: err.message });
       throw err;
     }
-    res.send({results});
+    res.send({listing: results});
   });
 });
 

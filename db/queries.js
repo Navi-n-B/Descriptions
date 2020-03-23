@@ -1,9 +1,10 @@
 // import pool from './pool'
-const db = require('./models/');
+const Sequelize = require('Sequelize');
+// const db = require('./models/index');
 const mariadb = require('mariadb');
 const bluebird = require('bluebird')
-const Listing = require('./models/listing.js');
-const convertToArr = require('helper.js');
+const models = require('./models');
+const {convertToObj} = require('./helper.js');
 
 const pool = mariadb.createPool({
   host: process.env.DB_HOST,
@@ -19,19 +20,25 @@ const pool = mariadb.createPool({
   });
 
   const getListingById = (listingId, callback) => {
+    console.log(listingId);
     try {
-      await sequelize.authenticate().then(()=>{
-        db.Listing.find({
+      sequelize.authenticate().then(()=>{
+        models.Listing.findAll({
           where: {
-            id: listingId,
+            id: [Number(listingId)],
           },
           // attributes: ['id'],
           // include: [{model:db.Room, attributes:['DisplayLabel']}]})
-        }).then(function(listing){
+        }).then(function(listings){
+          console.log(listings);
+          models.Listing.findAll().then((listings)=>{console.log("length here",listings.length)});
+          const listing = listings[0];
           if(!listing) throw 'no listing found';
-          listing.amenities_list = convertToArr(listing.amenities_list);
-          listing.beds_list = convertToArr(listing.beds_list);
-          listing.accessibilities_list = convertToArr(listing.accessibilities_list);
+          console.log(models.Listing.findAll());
+          listing.amenities_list = convertToObj('amenities',listing.amenities_list);
+          listing.pros_list = convertToObj('pros',listing.pros_list);
+          listing.beds_list = convertToObj('bed_type',listing.beds_list);
+          listing.accessibilities_list = convertToObj('accessibilities',listing.accessibilities_list);
           callback(null,listing);
         })
         // sequelize.
@@ -68,7 +75,7 @@ const pool = mariadb.createPool({
   //     })
   //     // response.status(200).json(results.rows);
   //   });
-  }
+  // }
 
   const getHost = (host,callback) => {
     // console.log(Listing.findAll());
