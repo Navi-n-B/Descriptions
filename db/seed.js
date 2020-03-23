@@ -18,21 +18,21 @@ const pool = mariadb.createPool({
 
 
 // const setData = (callback) => {
-const setListings = (callback) => {
-// console.log(Listing.findAll());
-  pool.getConnection().then(conn => {
-    // conn.batch('INSERT INTO  listings_item(title,host_id,amenities_list,description,location,guest_size,bath_count,accessibilities_list,pros_list,beds_list) values (?,?,?,?,?,?,?,?,?,?)',[
-    //   // 'listing 1',1,
-    // // ])
-    return conn;
-    .then((res) => {
-      callback(null,res);
-      conn.release();
-    }).catch((err)=> {
-      callback(err,null);
-    })
-    // response.status(200).json(results.rows);
-  });
+// const setListings = (callback) => {
+// // console.log(Listing.findAll());
+//   pool.getConnection().then(conn => {
+//     // conn.batch('INSERT INTO  listings_item(title,host_id,amenities_list,description,location,guest_size,bath_count,accessibilities_list,pros_list,beds_list) values (?,?,?,?,?,?,?,?,?,?)',[
+//     //   // 'listing 1',1,
+//     // // ])
+//     return conn;
+//     .then((res) => {
+//       callback(null,res);
+//       conn.release();
+//     }).catch((err)=> {
+//       callback(err,null);
+//     })
+//     // response.status(200).json(results.rows);
+//   });
 }
 
 export default setListings

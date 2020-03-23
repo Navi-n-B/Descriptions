@@ -1,6 +1,6 @@
 import * as Ionicon from 'react-icons/io';
 
-export function getIonicon(icon) {
+export function getIonicon(icon,) {
   let foundIcon = Ionicon[icon];
   foundIcon = foundIcon || Ionicon['IoIosCode'];
   // foundIcon.size = size;

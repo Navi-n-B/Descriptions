@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING
   }, {});
   Amenity.associate = function(models) {
-    // associations can be defined here
+    // Pro.belongsTo(models.listing, foreignKey: {unique: true})
   };
   return Amenity;
 };

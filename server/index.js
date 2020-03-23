@@ -4,7 +4,7 @@ require('dotenv').config();
 const PORT = process.env.EXPRESS_PORT;
 // const sequelize = require('sequelize');
 const { showDatabases } = require('../db/dev/db-query.js');
-const {  getListings } = require('../db/queries.js');
+const { getListings, getListingById } = require('../db/queries.js');
 
 app.get('/', (req, res) => {
   const result = showDatabases();
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   //   if(err){
   //     res.send({ message: 'uh-oh' });
   //   }
-  //   res.send({ listings: [...results] });
+  //   res.send({ listings: [...r53esults] });
   // }
   res.send({ message: 'endpoint working' });
 });
@@ -21,6 +21,15 @@ app.get('/getListings', (req, res) => {
   getListings((err,results)=>{
     if(err){
       res.send({ message: 'uh-oh' });
+    }
+    res.send({results});
+  });
+});
+app.get('/listing/:id', (req, res) => {
+  getListingsById(req.params.id,(err,results)=>{
+    if(err){
+      res.send({ message: err.message });
+      throw err;
     }
     res.send({results});
   });

@@ -4,20 +4,20 @@ const sequelize = new Sequelize('database', 'root', '' , {
   dialect: 'mariadb'
 });
 
-class Hosts extends Model {}
-const Hosts = sequelize.define('hosts', {
-    id: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    listings: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    }
-});
-Hosts.sync({ force : true })
+// class Hosts extends Model {}
+// const Hosts = sequelize.define('hosts', {
+//     id: {
+//       type: Sequelize.INTEGER,
+//       allowNull: false,
+//       autoIncrement: true,
+//       primaryKey: true
+//     },
+//     listings: {
+//       type: Sequelize.STRING,
+//       allowNull: true,
+//     }
+// });
+// Hosts.sync({ force : true })
 
 // class Beds extends Model {}
 // const Beds = sequelize.define('hosts', {
@@ -38,7 +38,7 @@ Hosts.sync({ force : true })
 
 
 // module.exports.Listings = Listings;
-module.exports.Hosts = Hosts;
+// module.exports.Hosts = Hosts;
 // module.exports.Beds = Beds;
 // module.exports.Amenities = Amenities;
 // module.exports.Pros = Pros;

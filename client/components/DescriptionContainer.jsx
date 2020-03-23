@@ -59,9 +59,8 @@ setRender() {
         // const theIcon = Ionicons[s.beds[i].icon];
         const bedRef = s.beds[i].type.replace(' ',/-/g);
         beds.push(<div className={bedRef + ' arrangement'}>
-        {/* <theIcon/> */}
         <div className='row'><span className="title">{s.beds[i].title}</span></div>
-      <p className='desc'>{s.beds[i]['count'] + ' ' + s.beds[i].type}</p>
+        <p className='desc'>{s.beds[i]['count'] + ' ' + s.beds[i].type}</p>
        </div>)
       }
 
