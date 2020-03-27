@@ -1,5 +1,6 @@
 node_modules
 .env
-
+.DS_Store
 #commit the package lock? y/n?
 package-lock.json
+config/database.json

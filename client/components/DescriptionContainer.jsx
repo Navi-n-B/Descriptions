@@ -21,10 +21,10 @@ setDescription(newDescription){
 
 //onMount, set result
 componentDidMount() {
-  axios.get('/api/descriptions').then((result) => {
-    this.setDescription(result.data.description);
+  // axios.get('/api/descriptions').then((result) => {
+  //   this.setDescription(result.data.description);
     // anythign to do after here?
-  });
+  // });
 }
 
 setRender() {
@@ -39,7 +39,7 @@ setRender() {
       //for room breakdown under title
       s.placeSize.map((piece, index) => {
          if(placeParts.length > 0 ) placeParts.push(' · ');
-         placeParts.push(<span class='piece'>{piece}</span>)
+         placeParts.push(<span className='piece'>{piece}</span>)
        })
 
        //recreating pros that show up at the top above the description body
@@ -59,15 +59,14 @@ setRender() {
         // const theIcon = Ionicons[s.beds[i].icon];
         const bedRef = s.beds[i].type.replace(' ',/-/g);
         beds.push(<div className={bedRef + ' arrangement'}>
-        {/* <theIcon/> */}
-        <div className='row'><span class="title">{s.beds[i].title}</span></div>
-      <p class='desc'>{s.beds[i]['count'] + ' ' + s.beds[i].type}</p>
+        <div className='row'><span className="title">{s.beds[i].title}</span></div>
+        <p className='desc'>{s.beds[i]['count'] + ' ' + s.beds[i].type}</p>
        </div>)
       }
 
       //lastly, amenity section separated by has and has-nots
       for(let i=0; i<s.amenities.titles.length;i++){
-        amenities.push(<Amenity title={s.pros.titles[i]} icon={s.pros.icons[i]}/>)
+        amenities.push(<Amenity title={s.amenities.titles[i]} icon={s.amenities.icons[i]}/>)
       }
       //pass missing, but maybe we could be passing more here with an options object.
       for(let i=0; i<s.amenities.missing.length;i++){
@@ -85,13 +84,13 @@ setRender() {
         <ul>
           {pros}
         </ul>
-        <section class="body">
+        <section className="body">
           {descriptionBody}
         </section>
-        <section class="beds">
+        <section className="beds">
           {beds}
         </section>
-        <section class="amenities">
+        <section className="amenities">
           {amenities}
         </section>
       </div>

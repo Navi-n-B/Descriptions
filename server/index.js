@@ -1,27 +1,38 @@
 const express = require('express');
 const app = express();
-const PORT = 8080;
-const sequelize = require('sequelize');
-const {  testAuthenticate,getListings} = require('../db/dev/queries.js');
+require('dotenv').config();
+const PORT = process.env.EXPRESS_PORT;
+// const sequelize = require('sequelize');
+const { showDatabases } = require('../db/dev/db-query.js');
+const { getListings, getListingById } = require('../db/queries.js');
 
 app.get('/', (req, res) => {
-  testAuthenticate();
+  const result = showDatabases();
+  console.log(result);
   // getListings.then(err,results)=>{
   //   if(err){
   //     res.send({ message: 'uh-oh' });
   //   }
-  //   res.send({ listings: [...results] });
+  //   res.send({ listings: [...r53esults] });
   // }
   res.send({ message: 'endpoint working' });
 });
 app.get('/getListings', (req, res) => {
-  console.log(test());
-  // getListings.then(err,results)=>{
-  //   if(err){
-  //     res.send({ message: 'uh-oh' });
-  //   }
-  //   res.send({ listings: [...results] });
-  // }
+  getListings((err,results)=>{
+    if(err){
+      res.send({ message: 'uh-oh' });
+    }
+    res.send({results});
+  });
+});
+app.get('/listing/:id', (req, res) => {
+  getListingsById(req.params.id,(err,results)=>{
+    if(err){
+      res.send({ message: err.message });
+      throw err;
+    }
+    res.send({results});
+  });
 });
 
 app.listen(PORT, () => {

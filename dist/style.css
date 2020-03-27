@@ -1,18 +1,96 @@
-@font-face {
-  font-family: "Circular";
-  src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.eot");
-  src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.eot?#iefix") format("embedded-opentype"), url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.woff") format("woff"), url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-};
+body, section.body h2 {
+  font-size: 17px;
+}
 
-/*ex of container of desc*/
-main {
+a {
+  font-weight: 700;
+  color: blue;
+}
+p {
+  font-weight: 400;
+}]
+h1, h2, h3, h4, h5, h6, button, span {
+  font-weight: 500;
+}
+ul {
+  list-style-type: none;
+  padding: 10px;
+}
+title {
+  font-weight: 700;
+}
+.bold {
+  font-weight: 900;
+}
+/*container to emulate actual css, remove before deploy*/
+body {
   max-width: 1280px;
   padding-left: 80px;
   padding-right: 80px;
+  font-weight: 400;
 }
 
+@media (min-width: 1128px) {
+  /*todo: make this grid layout breakdown work*/
+  .listing-body {
+    -ms-grid-column:1;
+    grid-column:1 / span 12;
+    -webkit-flex:initial;
+    -ms-flex:0 1 auto;
+    flex:initial;
+  }
+
+  .listing-body #description {
+    -ms-grid-column:1;
+    grid-column:1 / span 7;
+  }
+  .listing-body aside {
+    -ms-grid-column:1;
+    grid-column:1 / span 5;
+
+  }
+}
+
+section.pro-body, section.beds > div {
+  display: inline;
+}
+
+.pro-body span {
+  color: #222222;
+}
+.pro-body p {
+  color: #717171;
+}
+
+
+section.beds > div.arrangement {
+  display: inline-block;
+  padding: 12px 12px 6px 10px;
+  border: 1px solid #222222;
+  border-radius: 15px;
+  max-width: 400px;
+  overflow-y: none;
+  margin: 10px;
+}
+
+.amenity {
+  float: left;
+  width: 45%;
+}
+.amenity:nth-child(even) {
+  float: right;
+}
+.amenity:nth-child(odd) {
+}
+.amenity span {
+  color: #222222;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.amenity span.missing {
+  text-decoration: line-through;
+}
 /*
 todo: adjust below to fit new markup
 ul {

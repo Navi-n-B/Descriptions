@@ -25,6 +25,7 @@ module.exports = {
       //   ]
       // },
       // {
+        //todo: readd scss;
     //     test: /\.scss$/,
     //     use: [
     //       {

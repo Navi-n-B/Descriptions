@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "your-db-access-user",
+    "password": "your-pass",
+    "database": "database",
+    "host": "127.0.0.1",
+    "dialect": "mariadb",
+    "operatorsAliases": false
+  },
+}
