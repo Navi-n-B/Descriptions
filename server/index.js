@@ -1,5 +1,8 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
+app.use(cors());
 require('dotenv').config();
 const PORT = process.env.EXPRESS_PORT;
 // const sequelize = require('sequelize');
@@ -8,15 +11,15 @@ const { getListings, getListingById } = require('../db/queries.js');
 app.use('/rooms/:id', express.static(__dirname + '/../dist'));
 app.use(express.static(__dirname + '/../dist'));
 app.get('/', (req, res) => {
-  const result = showDatabases();
-  console.log(result);
+  // const result = showDatabases();
+  // console.log(result);
   // getListings.then(err,results)=>{
   //   if(err){
   //     res.send({ message: 'uh-oh' });
   //   }
   //   res.send({ listings: [...r53esults] });
   // }
-  res.send({ message: 'endpoint working' });
+  // res.send({ message: 'endpoint working' });
 });
 app.get('/api/getListings', (req, res) => {
   getListings((err,results)=>{

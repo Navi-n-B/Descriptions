@@ -18,7 +18,7 @@
   font-style: italic;
   font-weight: 400;
 } */
-@font-face {
+/* @font-face {
   font-family: "airbnb-cereal";
   src: url("https://raw.githubusercontent.com/huuphongnguyen/cereal-airbnb-font/blob/master/AirbnbCereal-Light.ttf") format("truetype");
   font-weight: 400;
@@ -37,7 +37,7 @@
   font-family: "airbnb-cereal";
   src: url("https://github.com/huuphongnguyen/cereal-airbnb-font/blob/master/AirbnbCereal-Bold.ttf") format("truetype");
   font-weight: 700;
-}
+} */
 @font-face {
   font-family: "Circular";
   src: url("https://www.bu.edu/cdn/fonts/Circular/Circular-Medium.eot");

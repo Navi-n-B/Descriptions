@@ -2,13 +2,21 @@ body, section.body h2 {
   font-size: 17px;
 }
 
-a {
+/* a {
   font-weight: 700;
   color: blue;
-}
+} */
+
 p {
   font-weight: 400;
-}]
+}
+
+p > a {
+  color: #222222;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 h1, h2, h3, h4, h5, h6, button, span {
   font-weight: 500;
 }

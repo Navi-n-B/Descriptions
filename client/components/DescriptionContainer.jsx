@@ -14,7 +14,7 @@ class Description extends Component{
   }
 
   setDescription(newDescription){
-    console.log(newDescription);
+    // console.log(newDescription);
     if(newDescription && newDescription.entries().length !== 0){
       // let newState = this.state;
       this.setState( {...newDescription});
@@ -28,7 +28,7 @@ class Description extends Component{
       listingEndpoint = '/api/listing/' + listingEndpoint;
       axios.get(listingEndpoint).then((result) => {
         const newDescription = result.data.listing;
-        console.log(newDescription);
+        // console.log(newDescription);
         if(newDescription && Object.keys(newDescription).length !== 0){
           // let newState = this.state;
           this.setState( {...newDescription});
@@ -58,10 +58,7 @@ class Description extends Component{
 
       //each description body seems to be broken into headers and paragraphs. They should be the same fsize tho.
       const dTitles = s.description_titles.split('|||'); const dBodies = s.description_bodies.split('|||');
-      for(let i=0; i<s.description_titles.length;i++){
-        descriptionBody.push(<h2>{dTitles[i]}</h2>)
-        descriptionBody.push(<p>{dBodies[i]}</p>)
-      };
+      descriptionBody.push(<DescriptionBody titles={dTitles} bodies ={dBodies}/>);
 
       //Sleeping Arrangements section
       //Todo: figure out dynamic icon generation. Probably uncontrolled
@@ -76,11 +73,11 @@ class Description extends Component{
 
       //lastly, amenity section separated by has and has-nots
       for(let i=0; i<s.amenities_list.has.length;i++){
-        amenities.push(<Amenity title={s.amenities_list.has[i].title} icon={s.amenities_list.has[i].icon}/>)
+        amenities.push(<Amenity key={'amenity-'+i} title={s.amenities_list.has[i].title} icon={s.amenities_list.has[i].icon}/>)
       }
       //pass missing, but maybe we could be passing more here with an options object.
       for(let i=0; i<s.amenities_list.missing.length;i++){
-        amenities.push(<Amenity title={s.amenities_list.missing[i].title} icon={s.amenities_list.missing[i].icon} missing={true}/>)
+        amenities.push(<Amenity key={'missing-'+i} title={s.amenities_list.missing[i].title} icon={s.amenities_list.missing[i].icon} missing={true}/>)
       }
     }
     //above is all linear time complexity right?
@@ -96,7 +93,7 @@ class Description extends Component{
           {pros}
         </ul>
         <section className="body">
-         <DescriptionBody description={descriptionBody}/>
+          {descriptionBody}
         </section>
         <section className="beds">
           {beds}

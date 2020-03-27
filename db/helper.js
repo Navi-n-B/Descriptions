@@ -41,14 +41,13 @@ export const generateNumber = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 }
 const generateDescription = (paragraphs=3) => {
-  let description = {titles: [], bodies: []};
-
+  let description = {titles: [''], bodies: []};
   for(let i=0; i<paragraphs;i++){
-    if(i<1){description.titles.push('')}
-    else { description.titles.push(randomWords({exactly:3, wordsPerString:2}).join(' ')); }
+    if(i>0){description.titles.push(randomWords({exactly:3, wordsPerString:2}).join(' '));}
     description.bodies.push(randomWords({exactly:100}).join(' '));
   };
   return description;
+  console.log(description);
 }
 
 export const getFakeListings = function(count=100,maxGuestSize=4) {
