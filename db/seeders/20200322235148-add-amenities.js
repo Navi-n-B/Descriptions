@@ -3,9 +3,9 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert('Amenities', [{
-        title: 'Unreal cooling'
+        title: 'Unreal cooling',
         icon: 'IoIosIceCream',
-        description: 'its real cool in here'
+        description: 'its real cool in here',
         createdAt : new Date(),
         updatedAt : new Date(),
       }], {});
@@ -14,4 +14,5 @@ module.exports = {
     return queryInterface.bulkDelete('Amenities', [{
       icon: 'IoIosIceCream',
     }])
+  }
 };

@@ -42,7 +42,212 @@ const descriptionInfo = {
 }
 
 
-
-
-
-export default descriptionInfo;
+export default {
+    "id": 1,
+    "title": "fuel clothing frequently listen yesterday social far fact condition flat",
+    "host_id": 2,
+    "amenities_list": {
+      "has": [
+        {
+          "title": "Alarm Clock",
+          "icon": "IoIosAlarm"
+        },
+        {
+          "title": "Bathroom",
+          "icon": "IoMdRocket"
+        },
+        {
+          "title": "Bed Linen",
+          "icon": "IoMdSquare"
+        },
+        {
+          "title": "Boating",
+          "icon": "IoIosBoat"
+        },
+        {
+          "title": "Chairs",
+          "icon": "IoIosDownload"
+        },
+        {
+          "title": "Cooking hob",
+          "icon": "IoMdNutrition"
+        },
+        {
+          "title": "Cookware & Kitchen Utensils",
+          "icon": "IoMdBarcode"
+        },
+        {
+          "title": "Dishwasher",
+          "icon": "IoMdLocate"
+        },
+        {
+          "title": "En suite bathroom",
+          "icon": "IoIosAddCircle"
+        },
+        {
+          "title": "Free Wireless Internet",
+          "icon": "IoIosWifi"
+        },
+        {
+          "title": "Freezer",
+          "icon": "IoMdSnow"
+        },
+        {
+          "title": "Fridge",
+          "icon": "IoMdPizza"
+        },
+        {
+          "title": "Heating",
+          "icon": "IoMdRefreshCircle"
+        },
+        {
+          "title": "Ironing Board",
+          "icon": "IoMdShirt"
+        },
+        {
+          "title": "Microwave",
+          "icon": "IoMdPizzas"
+        },
+        {
+          "title": "Oven",
+          "icon": "IoMdOptions"
+        },
+        {
+          "title": "Queen size bed",
+          "icon": "IoIosBed"
+        },
+        {
+          "title": "Shopping Mall",
+          "icon": "IoMdNavigate"
+        },
+        {
+          "title": "Shower",
+          "icon": "IoMdUmbrella"
+        },
+        {
+          "title": "Smoke detectors",
+          "icon": "IoLogoFlickr"
+        },
+        {
+          "title": "Sofa",
+          "icon": "IoMdWalk"
+        },
+        {
+          "title": "Stereo",
+          "icon": "IoMdRadio"
+        },
+        {
+          "title": "Towels",
+          "icon": "IoIosThumbsUp"
+        }
+      ],
+      "missing": [
+        {
+          "title": "Air conditioning",
+          "icon": "IoIosCloudDownload"
+        },
+        {
+          "title": "Balcony",
+          "icon": "IoIosBody"
+        },
+        {
+          "title": "Bathtub",
+          "icon": "IoMdSquareOutline"
+        },
+        {
+          "title": "Cable TV",
+          "icon": "IoIosTv"
+        },
+        {
+          "title": "Carbon monoxide detectors",
+          "icon": "IoMdAlert"
+        },
+        {
+          "title": "Children Area",
+          "icon": "IoIosHeartEmpty"
+        },
+        {
+          "title": "Coffee Maker in Room",
+          "icon": "IoIosOutlet"
+        },
+        {
+          "title": "Double bed",
+          "icon": "IoIosBed"
+        },
+        {
+          "title": "Free Parking",
+          "icon": "IoIosCar"
+        },
+        {
+          "title": "Golf",
+          "icon": "IoMdRedo"
+        },
+        {
+          "title": "Hair Dryer",
+          "icon": "IoMdPerson"
+        },
+        {
+          "title": "Hot tub",
+          "icon": "IoIosWater"
+        },
+        {
+          "title": "Indoor Pool",
+          "icon": "IoIosWine"
+        },
+        {
+          "title": "Outdoor Pool",
+          "icon": "IoIosWater"
+        },
+        {
+          "title": "Outdoor Tennis",
+          "icon": "IoLogoGameControllerA"
+        },
+        {
+          "title": "Restaurant",
+          "icon": "IoMdTrain"
+        },
+        {
+          "title": "Really Great Toilet",
+          "icon": "IoMdStarOutline"
+        },
+        {
+          "title": "TV",
+          "icon": "IoMdTv"
+        }
+      ]
+    },
+    "description_titles": "children broke as start fallen whispered|||plus grow cake spin certainly supply|||total ahead believed principal situation hung",
+    "description_bodies": "melted clean regular exact badly small exclaimed construction forth brass short power ate congress word work beneath go tropical while column doll them label familiar lamp service quickly noun swept too visitor printed national task eat sunlight glass around spread view told strange adult getting than herd mile return carry fully coffee make look sat vowel western soon deep motor time log declared main obtain situation allow straight ride worried hello hope future prove lungs harder sight for slipped gray club relationship tax string bank garden accident kept slowly yellow at plus rather slave nearest electric lying problem split citizen|||outside chemical church program sound corn shadow blow excitement goes conversation row several eight changing accept upward rays forty canal bread general establish anything join harbor rather equal shoot unless stepped deeply death grandmother floor tonight mouth setting taste goes government thousand pick silver proud pupil laugh positive picture frequently practice herself cost wolf nation seems breathe diagram steady zoo exist little sitting fireplace expression else get hospital exactly safety remain death favorite shoe each glass gift cast folks game correct perhaps club managed treated brief who cup late duck scientist making wore setting night birth fat circle location spite|||frog shut different nearer space advice rate wood like born reader relationship century speech birth load member silent throughout am joy bad struck safe dangerous fill scene mile instant same program she behavior certain top short concerned pine morning rich voice bowl hang mass any crop up difficult offer event attempt sink doubt nation hole courage through ring aware will wheat sold strip simplest help breathing ago steam begun shake by easily doll question potatoes adjective to clothing structure why beautiful dance nose voice same tone electric rush we that tropical empty younger thing tight hung indeed statement meet eye",
+    "location": "Fake Location",
+    "guest_size": 2,
+    "bath_count": 2.5,
+    "accessibilities_list": [
+      "Step-free access",
+      "Wide hallways",
+      "Roll-in shower with chair",
+      "Bathtub with shower chair"
+    ],
+    "pros_list": [
+      {
+        "title": "Great Host!",
+        "description": "This host is a great host.",
+        "icon": "IoIosMedal"
+      },
+      {
+        "title": "Super Clean!",
+        "description": "120% of guests said this home was magical.",
+        "icon": "IoIosColorWand"
+      },
+      {
+        "title": "The whole shebang!",
+        "description": "You get this all to yo'self.",
+        "icon": "IoIosArchive"
+      }
+    ],
+    "beds_list": [
+      "king",
+      "jack"
+    ],
+    "createdAt": "2020-03-23T20:03:50.000Z",
+    "updatedAt": "2020-03-23T20:03:50.000Z"
+}

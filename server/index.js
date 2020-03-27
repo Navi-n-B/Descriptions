@@ -5,7 +5,8 @@ const PORT = process.env.EXPRESS_PORT;
 // const sequelize = require('sequelize');
 const { showDatabases } = require('../db/dev/db-query.js');
 const { getListings, getListingById } = require('../db/queries.js');
-
+app.use('/rooms/:id', express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + '/../dist'));
 app.get('/', (req, res) => {
   const result = showDatabases();
   console.log(result);
@@ -17,7 +18,7 @@ app.get('/', (req, res) => {
   // }
   res.send({ message: 'endpoint working' });
 });
-app.get('/getListings', (req, res) => {
+app.get('/api/getListings', (req, res) => {
   getListings((err,results)=>{
     if(err){
       res.send({ message: 'uh-oh' });
@@ -25,13 +26,14 @@ app.get('/getListings', (req, res) => {
     res.send({results});
   });
 });
-app.get('/listing/:id', (req, res) => {
-  getListingsById(req.params.id,(err,results)=>{
+app.get('/api/listing/:id', (req, res) => {
+  console.log('hello!');
+  getListingById(req.params.id,(err,results)=>{
     if(err){
       res.send({ message: err.message });
       throw err;
     }
-    res.send({results});
+    res.send({listing: results});
   });
 });
 

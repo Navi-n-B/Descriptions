@@ -17,7 +17,10 @@ module.exports = {
       amenities_list: {
         type: Sequelize.STRING
       },
-      description: {
+      description_titles: {
+        type: Sequelize.STRING
+      },
+      description_bodies: {
         type: Sequelize.TEXT
       },
       location: {

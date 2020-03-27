@@ -52,14 +52,15 @@ body {
 }
 
 section.pro-body, section.beds > div {
-  display: inline;
+  display: inline-block;
 }
-
 .pro-body span {
+  font-weight: 600;
   color: #222222;
 }
 .pro-body p {
   color: #717171;
+  margin: 0 auto;
 }
 
 
@@ -71,6 +72,9 @@ section.beds > div.arrangement {
   max-width: 400px;
   overflow-y: none;
   margin: 10px;
+}
+.amenity.missing {
+  text-decoration: line-through;
 }
 
 .amenity {
@@ -85,12 +89,20 @@ section.beds > div.arrangement {
 .amenity span {
   color: #222222;
   font-weight: 400;
+  vertical-align: top;
   font-size: 16px;
   line-height: 20px;
 }
 .amenity span.missing {
   text-decoration: line-through;
 }
+
+li.pro {
+  margin: 10px auto;
+}
+
+
+
 /*
 todo: adjust below to fit new markup
 ul {

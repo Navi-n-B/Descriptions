@@ -10,9 +10,10 @@ module.exports = {
       createdAt : new Date(),
       updatedAt : new Date(),
     }], {});
-},
-down : function (queryInterface, Sequelize) {
-return queryInterface.bulkDelete('Accessibilities', [{
-  icon: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/home-decor-trends-1576605581.png'
-}])
+  },
+  down : function (queryInterface, Sequelize) {
+  return queryInterface.bulkDelete('Accessibilities', [{
+    icon: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/home-decor-trends-1576605581.png'
+  }])
+  }
 }
