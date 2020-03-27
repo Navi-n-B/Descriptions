@@ -44,7 +44,8 @@ const generateDescription = (paragraphs=3) => {
   let description = {titles: [], bodies: []};
 
   for(let i=0; i<paragraphs;i++){
-    description.titles.push(randomWords({exactly:3, wordsPerString:2}).join(' '));
+    if(i<1){description.titles.push('')}
+    else { description.titles.push(randomWords({exactly:3, wordsPerString:2}).join(' ')); }
     description.bodies.push(randomWords({exactly:100}).join(' '));
   };
   return description;

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import descriptionData from '../dev/dummyData.jsx';
 import Pro from './bnbPro.jsx';
+import DescriptionBody from './body.jsx';
 import Amenity from './Amenity.jsx';
 // import Footer from './components/Footer.jsx';
 
@@ -95,7 +96,7 @@ class Description extends Component{
           {pros}
         </ul>
         <section className="body">
-          {descriptionBody}
+         <DescriptionBody description={descriptionBody}/>
         </section>
         <section className="beds">
           {beds}
