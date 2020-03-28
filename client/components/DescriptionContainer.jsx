@@ -4,6 +4,7 @@ import descriptionData from '../dev/dummyData.jsx';
 import Pro from './bnbPro.jsx';
 import DescriptionBody from './body.jsx';
 import Amenity from './Amenity.jsx';
+import { generateNumber } from '../../db/helper.js'
 // import Footer from './components/Footer.jsx';
 
 class Description extends Component{
@@ -23,7 +24,7 @@ class Description extends Component{
 
   //onMount, set result
   componentDidMount() {
-    let listingEndpoint = location.pathname.split('rooms/')[1];
+    let listingEndpoint = location.pathname.split('rooms/')[1] || generateNumber(100);
     if(listingEndpoint){
       listingEndpoint = '/api/listing/' + listingEndpoint;
       axios.get(listingEndpoint).then((result) => {
@@ -47,7 +48,7 @@ class Description extends Component{
     descriptionBody = []; let listingTitle = '';
     if(Object.keys(s).length > 2){
       listingTitle = s.title.charAt(0).toUpperCase() + s.title.slice(1);
-      placeParts.push(<span className='piece'>{s.guest_size} guests · </span>);
+      placeParts.push(<span className='piece'>{s.guest_size+1} guests · </span>);
       placeParts.push(<span className='piece'>{s.beds_list.count} beds · </span>);
       placeParts.push(<span className='piece'>{s.bath_count} baths </span>);
 

@@ -109,6 +109,16 @@ li.pro {
   margin: 10px auto;
 }
 
+header::after{
+  content: '';
+  position: absolute;
+  width: 50vw;
+  height: 1px;
+  left: 0;
+  display: block;
+  clear: both;
+  background-color: black;
+}
 
 
 /*
