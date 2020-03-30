@@ -1,5 +1,5 @@
 // import pool from './pool'
-const Sequelize = require('Sequelize');
+const Sequelize = require('sequelize');
 // const db = require('./models/index');
 const mariadb = require('mariadb');
 const bluebird = require('bluebird')

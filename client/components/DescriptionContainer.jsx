@@ -90,7 +90,7 @@ class Description extends Component{
           <span className="airbnb-space">{placeParts}</span>
           <div className="circle-icon person"></div>
         </header>
-        <ul>
+        <ul className="pros-list has-divider-before has-divider-after">
           {pros}
         </ul>
         <section className="body">

@@ -20,9 +20,11 @@ p > a {
 h1, h2, h3, h4, h5, h6, button, span {
   font-weight: 500;
 }
-ul {
+ul.pros-list {
+  padding-top: 32px;
+  padding-bottom: 32px;
   list-style-type: none;
-  padding: 10px;
+  /* padding: 10px; */
 }
 title {
   font-weight: 700;
@@ -32,6 +34,7 @@ title {
 }
 /*container to emulate actual css, remove before deploy*/
 body {
+  margin: 0;
   max-width: 1280px;
   padding-left: 80px;
   padding-right: 80px;
@@ -109,17 +112,42 @@ li.pro {
   margin: 10px auto;
 }
 
-header::after{
+.has-divider-after::after{
+  overflow: hidden;
   content: '';
   position: absolute;
-  width: 50vw;
-  height: 1px;
-  left: 0;
+  max-width: 1280px;
+  width: 100vw;
+  height: 2px;
+  left: 80px;
   display: block;
   clear: both;
-  background-color: black;
+  background-color: 	#dddddd;
+}
+.has-divider-before::before {
+  overflow: hidden;
+  content: '';
+  position: absolute;
+  max-width: 1280px;
+  width: 100vw;
+  height: 2px;
+  left: 80px;
+  display: block;
+  clear: both;
+  background-color: 	#dddddd;
 }
 
+.listing-body header {
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+
+.pros-list.has-divider-before::before{
+  margin-top:-24px;
+}
+.pros-list.has-divider-after::after{
+  margin-top:20px;
+}
 
 /*
 todo: adjust below to fit new markup
