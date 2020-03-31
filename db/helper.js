@@ -66,7 +66,7 @@ export const getFakeListings = function(count=100,maxGuestSize=4) {
       guest_size: listingSize,
       bath_count: 2.5,
       beds_list: generateArray(6,listingSize),
-      pros_list: '0,1,3',
+      pros_list: generateArray(10,3),
       createdAt : new Date(),
       updatedAt : new Date(),
       });
@@ -100,7 +100,12 @@ const airbnbDescriptors = {
     {title: 'Great Host!', description: 'This host is a great host.', icon: 'IoIosMedal'},
     {title: 'Super Clean!', description: '120% of guests said this home was magical.', icon: 'IoIosColorWand'},
     {title: 'Close to the beach!', description: 'This place is mondo close to the beach.', icon: 'IoIosIceCream'},
-    {title: 'The whole shebang!', description: 'You get this all to yo\'self.', icon: 'IoIosArchive'},
+    {title: 'Michelle is a Superhost', description: 'Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.', icon: 'IoIosArchive'},
+    {title: 'Great location', description: '90% of recent guests gave this location a 5-star rating.', icon: 'IoIosArchive'},
+    {title: 'Great check-in experience', description: '95% of recent guests gave the check-in process a 5-star rating.', icon: 'IoIosArchive'},
+    {title: 'Come with cats!', description: 'There\'s a ton of cats! Non-negotiable.', icon: 'IoIosArchive'},
+    {title: 'A Popular listing!', description: 'Everyone wants to stay here!', icon: 'IoIosArchive'},
+    {title: 'Self check-in', description: 'Check yourself in with the lockbox.', icon: 'IoIosArchive'},
   ],
   ['amenities']: [
     {title: "Air conditioning", icon: 'IoIosCloudDownload'},

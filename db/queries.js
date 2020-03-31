@@ -27,8 +27,6 @@ const pool = mariadb.createPool({
           where: {
             id: [Number(listingId)],
           },
-          // attributes: ['id'],
-          // include: [{model:db.Room, attributes:['DisplayLabel']}]})
         }).then(function(listings){
           console.log(listings);
           models.Listing.findAll().then((listings)=>{console.log("length here",listings.length)});
@@ -41,7 +39,6 @@ const pool = mariadb.createPool({
           listing.accessibilities_list = convertToObj('accessibilities',listing.accessibilities_list);
           callback(null,listing);
         })
-        // sequelize.
       });
     } catch (error) {
       console.error('Unable to connect to the database:', error);

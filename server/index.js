@@ -13,13 +13,12 @@ app.use(express.static(__dirname + '/../dist'));
 app.get('/', (req, res) => {
   // const result = showDatabases();
   // console.log(result);
-  // getListings.then(err,results)=>{
+  // getListings.then((err,results)=>{
   //   if(err){
   //     res.send({ message: 'uh-oh' });
   //   }
-  //   res.send({ listings: [...r53esults] });
-  // }
-  // res.send({ message: 'endpoint working' });
+  //   res.send({ listings: [...results] });
+  // })
 });
 app.get('/api/getListings', (req, res) => {
   getListings((err,results)=>{

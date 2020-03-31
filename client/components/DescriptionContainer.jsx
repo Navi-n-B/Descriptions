@@ -4,6 +4,7 @@ import descriptionData from '../dev/dummyData.jsx';
 import Pro from './bnbPro.jsx';
 import DescriptionBody from './body.jsx';
 import Amenity from './Amenity.jsx';
+import Bed from './bed.jsx';
 import { generateNumber } from '../../db/helper.js'
 // import Footer from './components/Footer.jsx';
 
@@ -24,18 +25,25 @@ class Description extends Component{
 
   //onMount, set result
   componentDidMount() {
-    let listingEndpoint = location.pathname.split('rooms/')[1] || generateNumber(100);
-    if(listingEndpoint){
-      listingEndpoint = '/api/listing/' + listingEndpoint;
-      axios.get(listingEndpoint).then((result) => {
-        const newDescription = result.data.listing;
-        // console.log(newDescription);
-        if(newDescription && Object.keys(newDescription).length !== 0){
-          // let newState = this.state;
-          this.setState( {...newDescription});
-        }
-      });
-    };
+    let listingEndpoint = location.pathname.split('rooms/')[1]
+    if(!listingEndpoint){
+      listingEndpoint = generateNumber(100);
+    }
+    if(listingEndpoint[listingEndpoint.length-1] === '/'){
+      listingEndpoint = listingEndpoint.substring(0, listingEndpoint.length - 1);
+    }
+    if(Number(listingEndpoint)>99){
+      listingEndpoint = generateNumber(100);
+    }
+    listingEndpoint = '/api/listing/' + listingEndpoint;
+    axios.get(listingEndpoint).then((result) => {
+      const newDescription = result.data.listing;
+      // console.log(newDescription);
+      if(newDescription && Object.keys(newDescription).length !== 0){
+        // let newState = this.state;
+        this.setState( {...newDescription});
+      }
+    });
   }
 
   setRender() {
@@ -45,11 +53,11 @@ class Description extends Component{
   render(){
     const s = this.state;
     let pros = [];let placeParts=[]; let amenities = [];let body=[];let beds=[]; let
-    descriptionBody = []; let listingTitle = '';
+    descriptionBody = []; let listingTitle = 'Entire home hosted by Sara';
     if(Object.keys(s).length > 2){
-      listingTitle = s.title.charAt(0).toUpperCase() + s.title.slice(1);
+      // listingTitle = s.title.charAt(0).toUpperCase() + s.title.slice(1);
       placeParts.push(<span className='piece'>{s.guest_size+1} guests · </span>);
-      placeParts.push(<span className='piece'>{s.beds_list.count} beds · </span>);
+      placeParts.push(<span className='piece'>{s.beds_list.length} beds · </span>);
       placeParts.push(<span className='piece'>{s.bath_count} baths </span>);
 
       //recreating pros that show up at the top above the description body
@@ -66,10 +74,8 @@ class Description extends Component{
       for(let i=0; i<s.beds_list.length;i++){
         // const theIcon = Ionicons[s.beds[i].icon];
         // const bedRef = s.beds[i]
-        beds.push(<div className={s.beds_list[i] + ' arrangement'}>
-        <div className='row'><span className="title">{(i+1) + '. '+s.beds_list[i]}</span></div>
-        <p className='desc'>{s.beds_list[i]}</p>
-      </div>)
+        const bed = s.beds_list[i]
+        beds.push(<Bed bed={bed} index={i}/>);
       }
 
       //lastly, amenity section separated by has and has-nots
@@ -84,25 +90,37 @@ class Description extends Component{
     //above is all linear time complexity right?
 
     return (
-      <div>
+      <React.Fragment>
+      <div class="description">
         <header>
-          <h1>{listingTitle}</h1>
+          <h1>{listingTitle}
+          </h1>
           <span className="airbnb-space">{placeParts}</span>
-          <div className="circle-icon person"></div>
+          <div className="circle-icon person">
+            <img src='https://a0.muscache.com/im/pictures/3f1b0029-72b9-4393-a41e-839f42d825aa.jpg?aki_policy=profile_x_medium'/>
+          </div>
         </header>
         <ul className="pros-list has-divider-before has-divider-after">
           {pros}
         </ul>
         <section className="body">
           {descriptionBody}
+          <a href="#">Contact Host</a>
         </section>
-        <section className="beds">
+        <section className="beds has-divider-before">
+          <h2>Sleeping Arrangements</h2>
           {beds}
         </section>
-        <section className="amenities">
+        <section className="amenities has-divider-before">
+          <h2>Amenities</h2>
+          {amenities}
+        </section>
+        <section className="accesibilities has-divider-before">
+          <h2>Accesibilities</h2>
           {amenities}
         </section>
       </div>
+      </React.Fragment>
     )
   };
 }
